@@ -39,7 +39,7 @@ header( "refresh:2;url=addphoto.php" );
         //Creating a presigned URL
         $cmd = $s3->getCommand('GetObject', ['Bucket' => 'photoalbum101092985', 'Key' => $_FILES['image']['name']]);
         
-        $request = $s3->createPresignedRequest($cmd, '+20 minutes');
+        $request = $s3->createPresignedRequest($cmd, '+7 days');
         
         // Get the actual presigned-url
         $presignedUrl = (string)$request->getUri();
